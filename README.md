@@ -1,6 +1,7 @@
 # Portfólio Pessoal - Junior Braga
-![image](![Capturar](https://github.com/user-attachments/assets/c2c9f139-eeef-4633-ba7b-4d81c4ec5e2f))
+![Imagem do site pessoal](https://github.com/user-attachments/assets/a05ebfb7-2503-4fa4-a99a-cf9f28a14ca0)
 
+---
 
 ## 🚀 Sobre o Projeto
 
