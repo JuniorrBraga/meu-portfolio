@@ -7,6 +7,8 @@
     --secondary-text-color: #a0a0a0;
     --border-color: #333333;
     --shadow-color: rgba(0, 0, 0, 0.5);
+    scroll-padding-top: 5rem;
+    /* Offset for fixed header */
 }
 
 * {
@@ -25,13 +27,6 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex-grow: 1;
 }
 
 /* GENERAL STYLES */
@@ -67,6 +62,11 @@ h2::after {
 
 section {
     padding: 6rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+    border-bottom: none;
 }
 
 .btn {
@@ -87,7 +87,7 @@ section {
 
 /* HEADER */
 .main-header {
-    position: sticky; /* Alterado de fixed para sticky */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -169,9 +169,9 @@ section {
 
 /* HOME SECTION */
 #home {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    min-height: calc(100vh - 5rem); /* Ajuste para header sticky */
 }
 
 .home-content {
@@ -212,9 +212,17 @@ section {
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 40px rgba(0, 170, 255, 0.3); }
-    50% { box-shadow: 0 0 60px rgba(0, 170, 255, 0.5); }
-    100% { box-shadow: 0 0 40px rgba(0, 170, 255, 0.3); }
+    0% {
+        box-shadow: 0 0 40px rgba(0, 170, 255, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 60px rgba(0, 170, 255, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 40px rgba(0, 170, 255, 0.3);
+    }
 }
 
 /* ABOUT SECTION */
@@ -270,8 +278,6 @@ section {
     overflow: hidden;
     box-shadow: 0 4px 15px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
 }
 
 .project-card:hover {
@@ -287,9 +293,6 @@ section {
 
 .project-info {
     padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .project-info h3 {
@@ -301,7 +304,6 @@ section {
     color: var(--secondary-text-color);
     font-size: 0.9rem;
     margin-bottom: 1rem;
-    flex-grow: 1;
 }
 
 .project-links a {
@@ -387,7 +389,6 @@ section {
     padding: 2rem;
     text-align: center;
     background-color: var(--surface-color);
-    margin-top: auto;
 }
 
 .main-footer p {
@@ -395,29 +396,24 @@ section {
     font-size: 0.9rem;
 }
 
-/* FADE-IN ANIMATION on load */
-body {
-    animation: fadeInAnimation ease 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+/* FADE-IN ANIMATION */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
-
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     h2 {
         font-size: 2rem;
     }
-    
+
     .main-nav {
         position: fixed;
         top: 5rem;
@@ -429,45 +425,45 @@ body {
         transition: transform 0.3s ease-in-out;
         z-index: 999;
     }
-    
+
     .main-nav.active {
         transform: translateX(0);
     }
-    
+
     .main-nav ul {
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100%;
     }
-    
+
     .main-nav ul li {
         margin: 1.5rem 0;
     }
-    
+
     .main-nav ul li a {
         font-size: 1.2rem;
     }
-    
+
     .menu-toggle {
         display: block;
     }
-    
+
     #home {
-        padding-top: 0; /* Removido padding-top */
+        padding-top: 5rem;
         min-height: auto;
     }
-    
+
     .home-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .home-image {
         order: -1;
         margin-bottom: 2rem;
     }
-    
+
     .home-image img {
         width: 250px;
         height: 250px;
@@ -479,15 +475,18 @@ body {
 }
 
 @media (max-width: 480px) {
-     .container {
+    .container {
         padding: 0 1rem;
     }
+
     section {
         padding: 4rem 0;
     }
+
     .home-text h1 {
         font-size: 2.5rem;
     }
+
     .home-text .subtitle {
         font-size: 1.2rem;
     }
