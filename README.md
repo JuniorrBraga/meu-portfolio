@@ -1,7 +1,6 @@
-# Portfólio Pessoal - Luciano Junior (Jr.dev)
+![image](https://github.com/user-attachments/assets/d2fddc51-0568-4f68-a822-7f707f19013c)# Portfólio Pessoal - Luciano Junior (Jr.dev)
 
-![Pré-visualização do site pessoal de Luciano Junior, com um design moderno e tema escuro.](https://i.imgur.com/Jg8aF4h.png)
-> **Sugestão:** Recomendo que você tire um print da sua versão final do site, envie para um site como o [Imgur](https://imgur.com/upload) e substitua o link da imagem acima.
+![Pré-visualização do site pessoal de Luciano Junior, com um design moderno e tema escuro.](![image](https://github.com/user-attachments/assets/77683cfe-6413-4d41-81cf-46835a9041eb)
 
 ## 🚀 Sobre o Projeto
 
