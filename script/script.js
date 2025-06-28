@@ -31,23 +31,64 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ======================= ACTIVE NAV LINK ON SCROLL =======================
-    const sections = document.querySelectorAll('section');
-    const navLi = document.querySelectorAll('.main-nav ul li a');
+    document.addEventListener('DOMContentLoaded', function () {
+        // 1. Renderiza os ícones do Feather ao carregar a página
+        feather.replace();
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 60) {
-                current = section.getAttribute('id');
-            }
+        // 2. Lógica para o menu mobile (hambúrguer)
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                const icon = menuToggle.querySelector('i');
+                icon.setAttribute('data-feather', mainNav.classList.contains('active') ? 'x' : 'menu');
+                feather.replace(); // Atualiza o ícone
+            });
+        }
+
+        // 3. Lógica para o comportamento dos links do menu
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                // Fecha o menu mobile se estiver aberto
+                if (mainNav && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    if (menuToggle) {
+                        const icon = menuToggle.querySelector('i');
+                        icon.setAttribute('data-feather', 'menu');
+                        feather.replace();
+                    }
+                }
+
+                // NOVA LÓGICA: Remove 'active' de todos os links
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                // Adiciona 'active' APENAS ao link que foi clicado
+                this.classList.add('active');
+            });
         });
 
-        navLi.forEach(a => {
-            a.classList.remove('active');
-            if (a.getAttribute('href').substring(1) === current) {
-                a.classList.add('active');
-            }
+        // 4. Lógica para destacar o link ativo no menu durante o SCROLL manual
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            // Encontra a seção que está visível no topo da página
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // O valor 61 é um pequeno offset para compensar a altura do header fixo
+                if (pageYOffset >= sectionTop - 61) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            // Atualiza a classe 'active' nos links com base na seção visível
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
         });
     });
 
