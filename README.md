@@ -58,8 +58,8 @@ Como este é um projeto puramente front-end, não há necessidade de um processo
 
 **Luciano Junior Bifano Braga**
 
-* **LinkedIn:** `https://linkedin.com/in/seu-usuario-linkedin`
-* **GitHub:** `https://github.com/seu-usuario-github`
-* **Email:** `seu.email@exemplo.com`
+* **LinkedIn:** `https://linkedin.com/in/junior-braga-dev`
+* **GitHub:** `https://github.com/JuniorrBraga`
+* **Email:** `bragajuniordev@gmail.com`
 
 ---
