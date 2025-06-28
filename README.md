@@ -1,5 +1,6 @@
-# Portfólio Pessoal - Luciano Junior (Jr.dev)
-![image](https://github.com/user-attachments/assets/77683cfe-6413-4d41-81cf-46835a9041eb)
+# Portfólio Pessoal - Junior Braga
+![image](![Capturar](https://github.com/user-attachments/assets/c2c9f139-eeef-4633-ba7b-4d81c4ec5e2f))
+
 
 ## 🚀 Sobre o Projeto
 
