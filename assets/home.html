@@ -1,0 +1,55 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jr.dev - Início</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <!-- Inclui o header -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html#home" class="logo">Jr<span>.</span>dev</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#home" class="nav-link active">Início</a></li>
+                    <li><a href="about.html#about" class="nav-link">Sobre</a></li>
+                    <li><a href="index.html#projects" class="nav-link">Projetos</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <div class="home-content">
+                    <div class="home-text">
+                        <p class="subtitle">Olá, eu sou</p>
+                        <h1>Luciano <span>Junior</span></h1>
+                        <p class="subtitle">Estudante de Ciência da Computação & Futuro Desenvolvedor</p>
+                        <a href="index.html#projects" class="btn">Meus Projetos</a>
+                    </div>
+                    <div class="home-image">
+                        <img src="https://placehold.co/400x400/00aaff/FFFFFF?text=Jr" alt="Foto de Luciano Junior">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+
+</html>
